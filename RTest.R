@@ -5,76 +5,76 @@ class(1+1i);
 class("pi");
 class(FALSE)
 
-###Vector ÏòÁ¿
+###Vector å‘é‡
 VecA <- c(0,1,2,3,4,5,6,7,8,9,10)
 VecB <- c(0,1,1,3,3,5,5,7,7,9,9)
 VecCh<- c("Welcome", "To", "Columbia")
 3*VecA;3+VecA;VecA+VecB;VecA*VecB;
 
-VecN <- rep(5, 10) # ÖØ¸´Ò»¸öÊı¹¹ÔìÏòÁ¿
-VecN <- seq(2, 12, by=2) # ¹¹ÔìµÈ²îÊıÁĞÏòÁ¿
-VecN <- 1:30 # Ë³´ÎÅÅÁĞÕûÊı¹¹ÔìÏòÁ¿
-VecN [-c(1,4,5,9,11)] # ²¹¼¯
-VecN [c(rep(TRUE,10),rep(FALSE,10),TRUE)] # ÓÃÂß¼­ÖµÈ¡ÔªËØ
+VecN <- rep(5, 10) # é‡å¤ä¸€ä¸ªæ•°æ„é€ å‘é‡
+VecN <- seq(2, 12, by=2) # æ„é€ ç­‰å·®æ•°åˆ—å‘é‡
+VecN <- 1:30 # é¡ºæ¬¡æ’åˆ—æ•´æ•°æ„é€ å‘é‡
+VecN [-c(1,4,5,9,11)] # è¡¥é›†
+VecN [c(rep(TRUE,10),rep(FALSE,10),TRUE)] # ç”¨é€»è¾‘å€¼å–å…ƒç´ 
 VecN1 <- VecN [VecN %% 5 == 4]
-length(VecN) # ²éÑ¯ÏòÁ¿³¤¶È
+length(VecN) # æŸ¥è¯¢å‘é‡é•¿åº¦
 max(VecN)
-#ÇóºÍsum£¬ÇóÆ½¾ùmean£¬×î´ómax×îĞ¡min£¬±ê×¼²îsd£¬·½²îvar£¬×Ü½ásummary
+#æ±‚å’Œsumï¼Œæ±‚å¹³å‡meanï¼Œæœ€å¤§maxæœ€å°minï¼Œæ ‡å‡†å·®sdï¼Œæ–¹å·®varï¼Œæ€»ç»“summary
 
-#Ç¿ÖÆ×ª»»ÀàĞÍ
+#å¼ºåˆ¶è½¬æ¢ç±»å‹
 as.logical(VecA)
-#ÃüÃû
+#å‘½å
 names(VecCh) <- c("Word1", "Word2", "Word3")
 VecCh[1]
 
-#??????????????????
+#æ­£æ€åˆ†å¸ƒå‘é‡
 vec <- rnorm(1000, mean = 0, sd = 1)
 Alpha <- 0.05
-qnorm(1 - Alpha/2) # ????????????????????????Alpha????????????
+qnorm(1 - Alpha/2) # æ­£æ€åˆ†å¸ƒæ˜¾è‘—æ°´å¹³Alphaçš„åˆ†ä½æ•°
 
-
-###Matrix ¾ØÕó
-#¹¹Ôì¾ØÕó
+###Matrix çŸ©é˜µ
+#æ„é€ çŸ©é˜µ
 Mat <- matrix(2:13, ncol=4, nrow=3)
-Zero <- matrix(0, 5, 4) # ¹¹ÔìÁã¾ØÕó
+Zero <- matrix(0, 5, 4) # æ„é€ é›¶çŸ©é˜µ
 
-nrow(Mat) # ĞĞÊı£¬ÁĞÊıncol
-dim(Mat) # Î¬¶È
+nrow(Mat) # è¡Œæ•°ï¼Œåˆ—æ•°ncol
+dim(Mat) # ç»´åº¦
 attributes(Mat) 
-#»òÕß
+#æˆ–è€…
 Mat2 <- 2:13
 dim(Mat2) <- c(3,4)
 
-#ºÏ²¢ÏòÁ¿³É¾ØÕó,????????????,????????????
+#åˆå¹¶å‘é‡æˆçŸ©é˜µï¼ŒçŸ©é˜µæ‹¼æ¥ï¼Œå‘é‡æ‹¼æ¥
 VecX <- rep(5,5) 
 VecY <- 11:15
-VecZ <- append(VecX, VecY)# ????????????
+VecZ <- append(VecX, VecY)# æ‹¼æ¥å‘é‡
 Mat <- cbind(VecX, VecY)
 Mat <- rbind(VecX, VecY)
 Mat
 
-#ÃüÃû
+#å‘½å
 dimnames(Mat) <- list(c("a", "b"), c("c", "d", "e", "f", "g"))
 Mat["b","f"]
 colnames(Mat) <- c("AA", "BB", "CC", "DD", "EE")
 #rownames
 
-#ÏÂ±ê¼ÆËã
+#ä¸‹æ ‡è®¡ç®—
 mat <- matrix(1:20, ncol=4)
 mat[4, ] <- rep(100, ncol(mat))
 mat[,c(-1,-2)]
 mat[,-(1:2)]
 diag(3)
-#¾ØÕó³Ë·¨%*%£¬ÇóÎ¬¶Èdim£¬×ªÖÃt£¬¶Ô½ÇÏßdiag£¬µ¥Î»¾ØÕódiag
-#½â·½³Ìsolve£¬ÇóÄæsolve
+#çŸ©é˜µä¹˜æ³•%*%ï¼Œæ±‚ç»´åº¦dimï¼Œè½¬ç½®tï¼Œå¯¹è§’çº¿diagï¼Œå•ä½çŸ©é˜µdiag
+#è§£æ–¹ç¨‹solveï¼Œæ±‚é€†solve
 
-###List ÁĞ±í
+###List åˆ—è¡¨
 ListX <- list(1, "a", TRUE, 1+4i)
 ListX$New <- "more stuff!"
-ListY <- vector("list", 5) # ????????????5??????list
+ListY <- vector("list", 5) # åˆ›å»ºé•¿åº¦5çš„ç©ºlist
 
-###DataFrames Êı¾İ¿ò
-#ÃüÃû
+
+###DataFrames æ•°æ®æ¡†
+#å‘½å
 x <- data.frame(foo = 1:4, bar = c(T, T, F, F))
 names(x) <- c("Cindy", "Rush")
 #row.names
